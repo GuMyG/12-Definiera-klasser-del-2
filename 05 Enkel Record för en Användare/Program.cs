@@ -1,22 +1,18 @@
-﻿namespace _06_Oföränderlig_Record_med_with_uttryck;
+﻿namespace _05_Enkel_Record_för_en_Anvandare;
 
-// RECORD-DEFINITION
-public record ProduktRecord(string Produktnamn, double Pris);
+// RECORD-DEFINITION (Kort syntax)
+public record Användare(int Id, string Namn);
 
 internal class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("--- Uppgift 6: Records och 'with' ---");
+        Console.WriteLine("--- Uppgift 5: Records ---");
 
-        ProduktRecord original = new ProduktRecord("Hörlurar", 1499.00);
+        Användare user = new Användare(101, "ClaesE");
+        //user.Id = 99;   // Ger kompileringsfel
 
-        // Skapa en oföränderlig kopia med ett ändrat tillstånd
-        ProduktRecord kopia = original with { Pris = 999.00 };
-
-        Console.WriteLine($"Original: {original}");
-        Console.WriteLine($"rea-kopia: {kopia}");
-
+        Console.WriteLine($"Hela objektet: {user}");
 
 
 
